@@ -1,0 +1,500 @@
+/* ================================
+   CONFIGURACIÓN GENERAL
+================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #0b0b0c;
+  --dark: #151618;
+  --gray: #292b2e;
+  --light-gray: #9b9da1;
+  --white: #f4f4f2;
+  --soft-white: #d9d9d6;
+  --accent: #87909a;
+}
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+
+  background: radial-gradient(
+    circle at 80% 20%,
+    #272a2e 0%,
+    var(--black) 40%,
+    #050506 100%
+  );
+
+  color: var(--white);
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================================
+   TARJETA PRINCIPAL
+================================ */
+
+.profile {
+  position: relative;
+
+  width: min(1100px, 100%);
+  min-height: 650px;
+
+  display: grid;
+  grid-template-columns: 38% 62%;
+
+  overflow: hidden;
+
+  background: var(--dark);
+
+  border: 1px solid #343638;
+
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+
+  border-radius: 24px 80px 24px 80px;
+}
+
+/* ================================
+   DECORACIÓN DE FONDO
+================================ */
+
+.background-number {
+  position: absolute;
+
+  right: 35px;
+  bottom: -70px;
+
+  font-size: 220px;
+  font-weight: 900;
+
+  color: rgba(255, 255, 255, 0.025);
+
+  line-height: 1;
+
+  pointer-events: none;
+}
+
+.vertical-line {
+  position: absolute;
+
+  top: 45px;
+  bottom: 45px;
+  left: 38%;
+
+  width: 1px;
+
+  background: #393b3e;
+}
+
+/* ================================
+   LADO IZQUIERDO
+================================ */
+
+.profile-left {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 45px;
+
+  background: linear-gradient(145deg, #202225 0%, #141517 65%, #0d0e10 100%);
+}
+
+/* ================================
+   ESTADO
+================================ */
+
+.top-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 10px;
+  letter-spacing: 2px;
+
+  color: var(--light-gray);
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--soft-white);
+
+  box-shadow: 0 0 0 4px rgba(217, 217, 214, 0.07);
+}
+
+/* ================================
+   FOTOGRAFÍA
+================================ */
+
+.photo-container {
+  position: relative;
+
+  width: 250px;
+  height: 310px;
+
+  margin: auto;
+}
+
+.profile-photo {
+  position: absolute;
+
+  inset: 10px;
+
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+
+  object-fit: cover;
+
+  filter: grayscale(100%);
+
+  border-radius: 8px 65px 8px 65px;
+
+  border: 1px solid #55585b;
+
+  transition:
+    filter 0.4s ease,
+    transform 0.4s ease;
+}
+
+.profile-photo:hover {
+  filter: grayscale(0%);
+
+  transform: translate(5px, -5px);
+}
+
+.photo-border {
+  position: absolute;
+
+  inset: 0;
+
+  border: 1px solid var(--accent);
+
+  border-radius: 8px 65px 8px 65px;
+
+  opacity: 0.45;
+}
+
+/* ================================
+   REDES
+================================ */
+
+.social-links {
+  display: flex;
+  gap: 22px;
+}
+
+.social-links a {
+  position: relative;
+
+  color: var(--soft-white);
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: bold;
+
+  letter-spacing: 1px;
+
+  transition: color 0.3s ease;
+}
+
+.social-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--white);
+
+  transition: width 0.3s ease;
+}
+
+.social-links a:hover {
+  color: white;
+}
+
+.social-links a:hover::after {
+  width: 100%;
+}
+
+/* ================================
+   LADO DERECHO
+================================ */
+
+.profile-right {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 45px 55px 35px;
+}
+
+/* ================================
+   HEADER
+================================ */
+
+.header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--light-gray);
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+.year {
+  color: #6d7074;
+}
+
+/* ================================
+   CONTENIDO PRINCIPAL
+================================ */
+
+.main-content {
+  margin: auto 0;
+}
+
+.greeting {
+  margin-bottom: 15px;
+
+  color: var(--light-gray);
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+}
+
+h1 {
+  font-size: clamp(60px, 7vw, 95px);
+
+  line-height: 0.88;
+
+  letter-spacing: -5px;
+
+  font-weight: 700;
+}
+
+h1 span {
+  color: var(--light-gray);
+}
+
+/* ================================
+   CARRERA
+================================ */
+
+.career {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 30px;
+}
+
+.career-line {
+  width: 45px;
+  height: 1px;
+
+  background: var(--accent);
+}
+
+.career p {
+  color: var(--soft-white);
+
+  font-size: 12px;
+
+  letter-spacing: 1px;
+}
+
+/* ================================
+   DESCRIPCIÓN
+================================ */
+
+.description {
+  max-width: 520px;
+
+  margin-top: 55px;
+}
+
+.description h2 {
+  margin-bottom: 12px;
+
+  font-size: 18px;
+
+  font-weight: 500;
+
+  letter-spacing: 1px;
+}
+
+.description p {
+  color: var(--light-gray);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+/* ================================
+   CONTACTO
+================================ */
+
+.contact {
+  display: flex;
+  align-items: center;
+
+  gap: 25px;
+
+  margin-top: 45px;
+}
+
+.contact-label {
+  font-size: 9px;
+
+  letter-spacing: 2px;
+
+  color: #707378;
+}
+
+.contact a {
+  color: var(--soft-white);
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  border-bottom: 1px solid #55585b;
+
+  padding-bottom: 4px;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.contact a:hover {
+  color: white;
+
+  border-color: white;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+.footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #303235;
+
+  color: #696c70;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 800px) {
+  body {
+    padding: 20px;
+  }
+
+  .profile {
+    grid-template-columns: 1fr;
+
+    border-radius: 20px 50px 20px 50px;
+  }
+
+  .vertical-line {
+    display: none;
+  }
+
+  .profile-left {
+    min-height: 500px;
+
+    padding: 35px;
+  }
+
+  .profile-right {
+    padding: 35px;
+  }
+
+  .photo-container {
+    width: 210px;
+    height: 260px;
+  }
+
+  h1 {
+    font-size: 65px;
+  }
+
+  .description {
+    margin-top: 40px;
+  }
+
+  .contact {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  body {
+    padding: 10px;
+  }
+
+  .profile-left,
+  .profile-right {
+    padding: 25px;
+  }
+
+  h1 {
+    font-size: 52px;
+
+    letter-spacing: -3px;
+  }
+
+  .social-links {
+    flex-wrap: wrap;
+  }
+
+  .photo-container {
+    width: 180px;
+    height: 230px;
+  }
+}
