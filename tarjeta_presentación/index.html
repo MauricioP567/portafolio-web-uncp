@@ -3,19 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Portafolio | Mauricio Vega</title>
-
     <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <main class="profile">
-      <!-- Decoración -->
+    <!-- ===================== HERO / PRESENTACIÓN ===================== -->
+    <main class="profile" id="inicio">
       <div class="background-number">01</div>
       <div class="vertical-line"></div>
 
-      <!-- Lado izquierdo -->
       <section class="profile-left">
         <div class="top-info">
           <span class="status-dot"></span>
@@ -24,7 +21,6 @@
 
         <div class="photo-container">
           <div class="photo-border"></div>
-
           <img
             src="Foto_yo.jpeg"
             alt="Fotografía de Mauricio Vega"
@@ -33,32 +29,20 @@
         </div>
 
         <div class="social-links">
-          <a href="https://github.com/MauricioP567" target="_blank"> GitHub </a>
-
-          <a
-            href="https://www.linkedin.com/in/mauricio-paolo-vega-sanabria-195989306/"
-            target="_blank"
-          >
-            LinkedIn
-          </a>
-
-          <a href="mailto:mauriciopvegasanabria567@gmail.com" target="_blank">
-            Email
-          </a>
+          <a href="https://github.com/MauricioP567" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/mauricio-paolo-vega-sanabria-195989306/" target="_blank">LinkedIn</a>
+          <a href="mailto:mauriciopvegasanabria567@gmail.com">Email</a>
         </div>
       </section>
 
-      <!-- Lado derecho -->
       <section class="profile-right">
         <div class="header">
           <span class="small-title">PORTAFOLIO WEB</span>
-
           <span class="year">2026</span>
         </div>
 
         <div class="main-content">
           <p class="greeting">HOLA, SOY</p>
-
           <h1>
             Mauricio Paolo<br />
             <span>Vega Sanabria.</span>
@@ -71,7 +55,6 @@
 
           <div class="description">
             <h2>FullStack</h2>
-
             <p>
               Me interesa el desarrollo FullStack porque me permite comprender y
               construir soluciones de principio a fin, combinando la experiencia
@@ -81,8 +64,7 @@
           </div>
 
           <div class="contact">
-            <span class="contact-label"> CONECTEMOS </span>
-
+            <span class="contact-label">CONECTEMOS</span>
             <a href="mailto:mauriciopvegasanabria567@gmail.com">
               mauriciopvegasanabria567@gmail.com
             </a>
@@ -95,5 +77,81 @@
         </div>
       </section>
     </main>
+
+    <!-- ===================== NAVEGACIÓN ===================== -->
+    <nav class="main-nav" id="mainNav">
+      <div class="nav-container">
+        <a href="#inicio" class="nav-logo">MV</a>
+        <ul class="nav-links">
+          <li><a href="#contenido">Contenido</a></li>
+          <li><a href="#evidencias">Evidencias</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#tecnologias">Tecnologías</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+      </div>
+    </nav>
+
+    <!-- ===================== CONTENIDO DEL CURSO ===================== -->
+    <section class="section" id="contenido">
+      <div class="section-header">
+        <span class="section-label">01</span>
+        <h2>Contenido del curso</h2>
+        <p>Temas desarrollados durante las 16 semanas de Desarrollo de Aplicaciones Web</p>
+      </div>
+
+      <div class="filters">
+        <input type="text" id="searchWeeks" placeholder="Buscar semana o tema..." />
+        <select id="filterWeekStatus">
+          <option value="all">Todas las semanas</option>
+          <option value="completed">Completadas (1-7)</option>
+          <option value="pending">Pendientes (8-16)</option>
+        </select>
+      </div>
+
+      <div class="weeks-grid" id="weeksGrid"></div>
+    </section>
+
+
+    <!-- ===================== PROYECTOS ===================== -->
+    <section class="section" id="proyectos">
+      <div class="section-header">
+        <span class="section-label">02</span>
+        <h2>Proyectos destacados</h2>
+        <p>Trabajos más relevantes</p>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <div class="empty-state">
+          <p>Aún no se han registrado proyectos.</p>
+          <span>Agrega proyectos en <code>js/main.js</code></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TECNOLOGÍAS ===================== -->
+    <section class="section" id="tecnologias">
+      <div class="section-header">
+        <span class="section-label">03</span>
+        <h2>Tecnologías y herramientas</h2>
+        <p>Stack utilizado durante el curso</p>
+      </div>
+
+      <div class="tech-categories" id="techCategories"></div>
+    </section>
+
+    <!-- ===================== MODAL ===================== -->
+    <div class="modal" id="modal" hidden>
+      <div class="modal-overlay" id="modalOverlay"></div>
+      <div class="modal-content" role="dialog" aria-modal="true">
+        <button class="modal-close" id="modalClose" aria-label="Cerrar">×</button>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
+    <!-- Botón volver arriba -->
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">↑</button>
+
+    <script src="js/main.js"></script>
   </body>
 </html>
